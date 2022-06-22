@@ -1,0 +1,12 @@
+token: ""
+clientId: ""
+owner: ""
+color: ""
+mongo:
+  username: ""
+  password: ""
+  endpart: ""
+status:
+  name: ""
+  type: "WATCHING"
+  presence: "ONLINE"

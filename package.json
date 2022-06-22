@@ -1,0 +1,13 @@
+{
+  "name": "base-bot",
+  "author": "blazecoding.me",
+  "repository": "https://github.com/blazecoding2009/discordjs-base-bot",
+  "dependencies": {
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.1",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^4.1.0"
+  }
+}
