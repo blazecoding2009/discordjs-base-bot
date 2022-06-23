@@ -20,10 +20,14 @@ module.exports = class BaseClient extends Client {
             this.config = yaml.load(fs.readFileSync('./config.yml', 'utf8'));
             this.commands = new Collection();
             this.logger = require('../utils/logger.js');
-            this.database = connect(`mongodb+srv://${this.config.mongo.username}:${encodeURIComponent(this.config.mongo.password)}@${this.config.mongo.endpart}`, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            }).then(() => this.logger.database("MongoDB Connected successfully!"));
+            if (this.database.enabled) {
+                this.database = connect(`mongodb+srv://${this.config.mongo.username}:${encodeURIComponent(this.config.mongo.password)}@${this.config.mongo.endpart}`, {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                }).then(() => this.logger.database("MongoDB Connected successfully!"));
+            } else {
+                this.logger.database("MongoDB is disabled.")
+            }
         }
 
     async start() {

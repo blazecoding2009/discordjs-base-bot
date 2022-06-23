@@ -3,6 +3,7 @@ clientId: ""
 owner: ""
 color: ""
 mongo:
+  enabled: false
   username: ""
   password: ""
   endpart: ""
