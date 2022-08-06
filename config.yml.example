@@ -1,5 +1,6 @@
 token: ""
 clientId: ""
+guildId: ""
 owner: ""
 color: ""
 mongo:

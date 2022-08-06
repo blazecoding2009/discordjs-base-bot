@@ -16,15 +16,9 @@ module.exports = {
 
         const rest = new REST({ version: '9' }).setToken(client.config.token);
 
-        /*rest.put(
-            Routes.applicationCommands(client.config.clientId),
-            { body: commands },
-        )
-            .then(() => logger.discord('Successfully registered application commands.'))
-            .catch(console.error);*/
-            rest.put(Routes.applicationGuildCommands(client.config.clientId, "863600892216737884"), { body: commands })
-            .then(() => logger.discord('Successfully registered application commands.'))
-            .catch(console.error);
+        rest.put(Routes.applicationGuildCommands(client.config.clientId, client.config.guildId), { body: commands })
+        .then(() => logger.discord('Successfully registered application commands.'))
+        .catch(console.error);
         
         client.logger = logger;
     }
